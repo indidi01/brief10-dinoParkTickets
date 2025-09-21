@@ -1,7 +1,7 @@
 import express from "express";
 import router from "./src/routes/index";
 import path from "node:path";
-import { cwd } from 'node:process';
+
 
 // import dotenv from "dotenv";
 
@@ -15,12 +15,12 @@ const port = 3000;
 //   response.send('la route fonctionne !');
 // })
 
-app.use("/", router);
-
 app.set('view engine', 'ejs');
-app.set('views', path.join(process.cwd(), 'views'));
+app.set("views", path.join(__dirname, "src", "views"));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: true}));
+
+app.use("/", router);
 
 app.listen(port, () => {
   console.log(`Le serveur a démarré sur le port: ${port}`);

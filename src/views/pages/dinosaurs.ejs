@@ -1,0 +1,18 @@
+<body>
+  <h1>Découvrez nos incroyables Dinosaures !</h1>
+
+  <% if (dinosaurs.lenght > 0) {%>
+  <ul>
+    <% dinosaurs.forEach(dino => { %>
+    <li>
+      <strong> </strong>
+      <p></p>
+    </li>
+    <% }); %>
+  </ul>
+  <% } else { %>
+  <p>hoho où sont passé les dinos ?</p>
+  <% } %>
+
+  <a href="/">Retour à l'acceuil</a>
+</body>
